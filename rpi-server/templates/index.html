@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Automation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: 'Poppins';
+            src: url('{{ url_for("static", filename="Poppins-Regular.ttf") }}') format('truetype');
+        }
+
+        body {
+            font-family: Poppins, Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background-image: url('{{ url_for("static", filename="background.png") }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 60vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        button {
+            background-color: #FF69B4;
+            border: 4px solid white;
+            color: white;
+            padding: 12px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 4px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            border-radius: 8px;
+            width: 180px;
+        }
+
+        button:hover {
+            background-color: transparent;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                background-size: 100% 150%;
+                height: 80vh;
+            }
+
+            button {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<h1>Home Automation</h1>
+<h2>Control Panel</h2>
+<div>
+    <button class="button" id="top_light_button" onclick="server.top_light()">TOP LIGHT</button>
+    <button class="button" id="back_light_button" onclick="server.back_light()">BACK LIGHT</button>
+    <button class="button" id="fan_button" onclick="server.fan()">FAN</button>
+    <button class="button" id="socket_button" onclick="server.socket()">SOCKET</button>
+</div>
+</body>
+</html>
