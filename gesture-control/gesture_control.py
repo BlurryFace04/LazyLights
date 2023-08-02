@@ -142,6 +142,12 @@ def determine_gesture_per_second(fingers):
         if mf["var"] > X:
             if mf["frames"].count(True) >= m:
                 print(f'MIDDLE FINGER, {mf["frames"].count(True)}')
+                url = 'http://192.168.1.3:5069/jsonex'
+                data = {
+                    "appliance": "f"
+                }
+                json_data = json.dumps(data)
+                requests.post(url, data=json_data, headers={'Content-Type': 'application/json'})
                 # browser = webdriver.Chrome(service=s, options=option)
                 # browser.get("http://192.168.1.3:5069")
                 # browser.find_element(By.ID, "fan_button").click()
@@ -168,7 +174,7 @@ def determine_gesture_per_second(fingers):
         if idf["var"] > X:
             if idf["frames"].count(True) >= m:
                 print(f'INDEX FINGER, {idf["frames"].count(True)}')
-                url = 'http://192.168.91.53:5069/jsonex'
+                url = 'http://192.168.1.3:5069/jsonex'
                 data = {
                     "appliance": "bl"
                 }
@@ -196,7 +202,7 @@ def determine_gesture_per_second(fingers):
         if pf["var"] > X:
             if pf["frames"].count(True) >= m:
                 print(f'PINKY FINGER, {pf["frames"].count(True)}')
-                url = 'http://192.168.91.53:5069/jsonex'
+                url = 'http://192.168.1.3:5069/jsonex'
                 data = {
                     "appliance": "tl"
                 }
