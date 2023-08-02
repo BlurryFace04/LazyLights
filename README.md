@@ -1,5 +1,5 @@
 # LazyLights
-LazyLights is a home automation project developed using Raspberry Pi 4 model B that allows you to control your home appliances in three different ways: through a web interface, using hand gestures, and using a specific external keyboard. The appliances are connected to the Raspberry Pi using a relay circuit.
+LazyLights is a home automation project developed using Raspberry Pi 4 model B that allows you to control your home appliances in four different ways: through a web interface, using hand gestures, using voice control, and using a specific external keyboard which acts as a macro. The appliances are connected to the Raspberry Pi using a relay circuit.
 
 ## Raspberry Pi Circuit:
 <p>
@@ -21,6 +21,10 @@ The hand gesture control is implemented using MediaPipe and OpenCV. The system c
 
 ![gesture](https://github.com/BlurryFace04/LazyLights/assets/64888928/75c51c72-593c-4aa5-93da-fd5937c2d71a)
 
+### Voice Control
+The voice control feature in LazyLights enables you to control your home appliances using voice commands given to Google Assistant. This feature is implemented using Sinric Pro, a service that allows you to connect your smart home devices to your favorite voice assistant. For this project, we have connected the LazyLights system to Google Assistant. The devices that you can control through voice commands include two lights (named as "front light" and "back light"), a fan, and a socket.
+With this feature in place, you can control your devices just by saying commands like "Hey Google, turn on the front light" or "Hey Google, turn off the fan".
+
 ### External Keyboard Control
 The external keyboard control is implemented using AutoHotkey. It is configured to listen for specific key presses exclusively on a designated external keyboard, which is used as a macro for controlling the appliances. This setup ensures that your main keyboard's functionality remains unaffected. Upon detecting a key press on the external keyboard, it sends a POST request with a JSON payload to the server API, triggering the control of a specific appliance. The server then triggers the corresponding relay in the relay circuit connected to the Raspberry Pi, which in turn controls the specific appliance. This feature provides a cool and unique way to manage your appliances, especially when the external keyboard is dedicated to this purpose.
 
@@ -36,3 +40,7 @@ The web interface is built using HTML and JavaScript. It provides a user-friendl
 
 ### External Keyboard Control
 The external keyboard control is implemented using AutoHotkey. It listens for specific key presses on a specific external keyboard, which is used as a macro. The keypresses on the main keyboard are not affected. When a key is pressed on the external keyboard, it sends a POST request with a JSON payload to the server API to control a specific appliance. This feature allows for a quick and easy way to control appliances without needing to interact with the web interface or use hand gestures.
+
+### Voice Control
+The voice control feature is implemented using the Sinric Pro SDK in a Node.js environment. It's set up in a way that listens to voice commands coming from Google Assistant, interprets the commands and then sends the appropriate signal to the LazyLights server to control the relevant device.
+The server script is configured with the unique application key and the secret key provided by Sinric Pro, and the unique device IDs for each of the home appliances. When a voice command is received from Google Assistant, the Sinric Pro service triggers the corresponding function in the script, which sends a POST request to the LazyLights server with the name of the appliance to be controlled.
