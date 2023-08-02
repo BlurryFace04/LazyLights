@@ -8,7 +8,7 @@ LazyLights is a home automation project developed using Raspberry Pi 4 model B t
 <p>
 
 ## Demonstration Video
-A demonstration video showing the working of the LazyLights project can be found [here](https://www.loom.com/share/fbee2d600988498793cb7d160198f58c?sid=c427d217-d654-443a-b4fa-3e4481d0208e). This video provides a comprehensive overview of how the system operates and how it can be used to control home appliances using a web interface, hand gestures, and a specific external keyboard.
+A demonstration video showing the working of the LazyLights project can be found [here](https://youtu.be/NbktQw_Obpc). This video provides a comprehensive overview of how the system operates and how it can be used to control home appliances using a web interface, hand gestures, and a specific external keyboard.
 
 ## Features
 ### Web Interface Control
