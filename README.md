@@ -1,6 +1,9 @@
 # LazyLights
 LazyLights is a home automation project developed using Raspberry Pi 4 model B that allows you to control your home appliances in four different ways: through a web interface, using hand gestures, using voice control, and using a specific external keyboard which acts as a macro. The appliances are connected to the Raspberry Pi using a relay circuit.
 
+I know you might be thinking that's a whole lotta features just for turning the lights on, and not that practically useful. So lemme tell you that's not even the goal.....
+I just created LazyLights and added this many features coz it was just COOL! Who cares about the usefulness?
+
 ## Raspberry Pi Circuit:
 <p>
 <img src="https://github.com/BlurryFace04/LazyLights/assets/64888928/6cdca357-bf3d-403e-a836-5f66841bf46c" width="49%" height="49%" />
